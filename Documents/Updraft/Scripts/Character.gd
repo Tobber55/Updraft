@@ -43,7 +43,7 @@ func player_movement(delta):
 	
 	
 	
-	if velocity.x == 0 and velocity.y == 0:
+	if velocity.x == 0:
 		$Character.play("Idle")
 	elif sprint == true and speed > 400:
 		$Character.play("Sprint") #Sprint anim
