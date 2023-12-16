@@ -29,6 +29,7 @@ func player_movement(delta):
 		walking = false
 	
 	if not is_on_floor():
+		$Character.play("Windy Idle")
 		velocity.y += gravity * delta
 		if velocity.y >= maxfallspeed:
 			velocity.y = maxfallspeed
@@ -41,21 +42,61 @@ func player_movement(delta):
 	if velocity.y == 0 and sprint == false:
 		Global.stamina += 0.5
 	
+	if $Character/Wings.animation == "Closed" and $Character.animation == "Idle":
+		$Character/Wings.scale.x = 1.25
+		$Character/Wings.scale.y = 0.9
+		$Character/Wings.position = Vector2(35, 12)
+		$Character/Wings.rotation = 0
+		$Character/Wings.z_index = -1
+	elif $Character/Wings.animation == "Flap" and $Character.animation == "Windy Idle":
+		$Character/Wings.scale.x = -1
+		$Character/Wings.scale.y = 1
+		$Character/Wings.position = Vector2(-39, -5)
+		$Character/Wings.rotation = 0
+		$Character/Wings.z_index = -1
+	elif $Character/Wings.animation == "Glide" and $Character.animation == "Windy Idle":################:
+		$Character/Wings.scale.x = 1
+		$Character/Wings.scale.y = 1
+		$Character/Wings.position = Vector2(21, -20)
+		$Character/Wings.rotation = 0
+		$Character/Wings.z_index = 1
+	elif $Character/Wings.animation == "Closed" and $Character.animation == "Walk":
+		$Character/Wings.scale.x = 1.25
+		$Character/Wings.scale.y = 0.9
+		$Character/Wings.position = Vector2(38, 12)
+		$Character/Wings.rotation = 0.05
+		$Character/Wings.z_index = -1
+	elif $Character/Wings.animation == "Closed_Running" and $Character.animation == "Sprint":
+		$Character/Wings.scale.x = 1.25
+		$Character/Wings.scale.y = 0.9
+		$Character/Wings.position = Vector2(21.5, 32)
+		$Character/Wings.rotation = 0.9
+		$Character/Wings.z_index = -1
 	
 	
-	if velocity.x == 0:
+	if velocity.x == 0 and is_on_floor():
 		$Character.play("Idle")
-	elif sprint == true and speed > 400:
-		$Character.play("Sprint") #Sprint anim
-	elif sprint == false:
+	elif sprint == true and speed > 400 and is_on_floor():
+		$Character.play("Sprint")
+		$Character/Wings.scale.x = 1.25
+		$Character/Wings.scale.y = 0.9
+		$Character/Wings.position = Vector2(22.5, 30)
+		$Character/Wings.rotation = 0.9
+		$Character/Wings.play("Closed_Running") #Sprint anim
+	elif sprint == false and is_on_floor():
 		$Character.play("Walk")
+		
 	
-	
+	if velocity.y == 0 and sprint == false:
+		$Character/Wings.play("Closed")
+
+
 	
 	if Input.is_action_pressed("ui_sprint") and is_on_floor() and Global.stamina > 0 and walking == true:
 		accel = 2000
 		speed = 600
 		Global.stamina -= 0.25
+		
 		sprint = true
 	else:
 		accel = 1500
@@ -75,8 +116,14 @@ func player_movement(delta):
 	
 	if Input.is_action_pressed("ui_fly") and Global.stamina > 0:
 		velocity.y = flyspeed
+		$Character/Wings.scale.x = -1
+		$Character/Wings.play("Flap")
+		$Character/Wings.position = Vector2(-39, -5)
 		Global.stamina -= 1
-	
+	elif not is_on_floor() and Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right") and velocity.y < 0:
+		$Character/Wings.play("Glide")
+		$Character/Wings.position = Vector2(21, -20)
+		
 	if Input.is_action_pressed("ui_right"):
 		$Character.scale.x = 1
 	elif Input.is_action_pressed("ui_left"):
@@ -85,11 +132,22 @@ func player_movement(delta):
 	
 	move_and_slide()
 
+func inventory(delta):
+	
+	
+	
+	
+	
+	pass
+
+
+
 func _physics_process(delta):
 	
 	player_movement(delta)
+	inventory(delta)
 	
-	
+	print($Character/Wings.position)
 	
 	
 	pass

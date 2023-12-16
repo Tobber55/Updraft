@@ -15,7 +15,7 @@ script = ExtResource("1_h7k7i")
 stream = ExtResource("2_lu5hj")
 
 [node name="Sprite" parent="." instance=ExtResource("1_g33vx")]
-position = Vector2(0, -136)
+position = Vector2(-29, -24)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
