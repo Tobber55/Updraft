@@ -13,4 +13,5 @@ func _process(delta):
 	$Health.value = Global.health
 	$XP.value = Global.xp
 	
+	
 	pass

@@ -147,7 +147,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	inventory(delta)
 	
-	print($Character/Wings.position)
+	#print($Character/Wings.position)
 	
 	
 	pass
