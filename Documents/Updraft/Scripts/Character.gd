@@ -13,7 +13,11 @@ var sprint = false
 var walking = false
 var flying = false
 
+var cooldown = 0
 
+const fireball = preload("res://Scenes/Attacks/Fire.tscn")
+
+signal pickupfirespell
 
 func get_input():
 	input.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
@@ -22,6 +26,10 @@ func get_input():
 func player_movement(delta):
 	
 	# Adds the gravity.
+	if Input.is_action_pressed("ui_right"):
+		$Marker2D.position.x = 17
+	if Input.is_action_pressed("ui_left"):
+		$Marker2D.position.x = -17
 	
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		walking = true
@@ -141,13 +149,51 @@ func inventory(delta):
 	pass
 
 
+func magic():
+	if Global.spell == "Fireball": #AND FIRE SPELL
+		var shoot = fireball.instantiate()
+		get_parent().add_child(shoot)
+		
+		shoot.position = $Marker2D.global_position
+		
+		print(shoot)
+		
+		
+	pass
+
+
 
 func _physics_process(delta):
 	
 	player_movement(delta)
 	inventory(delta)
 	
+	if cooldown > 0:
+		cooldown -= 1
+	
+	if Input.is_action_just_pressed("click") and Global.melee == true and cooldown <= 0:
+		magic()
+		cooldown += 20
+	
+	if Input.is_action_just_pressed("ui_switch"):
+		Global.melee = !(Global.melee)
+	
 	#print($Character/Wings.position)
 	
 	
 	pass
+
+
+func _on_fire_spell_pickup():
+	
+	pickupfirespell.emit()
+	
+	pass # Replace with function body.
+
+
+func _on_pick_up_radius_body_entered(body):
+	
+	if body.is_in_group("Item") and len(Global.inventory) != 0:
+		
+	
+	pass # Replace with function body.

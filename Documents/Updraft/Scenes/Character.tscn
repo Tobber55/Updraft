@@ -1,24 +1,24 @@
-[gd_scene load_steps=50 format=3 uid="uid://c4f7oy52k8v7d"]
+[gd_scene load_steps=57 format=3 uid="uid://c4f7oy52k8v7d"]
 
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_fcd6e"]
 [ext_resource type="Texture2D" uid="uid://dusdmtq5t4422" path="res://Textures/Animations/CharacterAnimations/Idle/pixil-frame-0.png" id="2_22g65"]
 [ext_resource type="Texture2D" uid="uid://dedthrr5oo8hx" path="res://Textures/Animations/CharacterAnimations/Windy Idle/pixil-frame-6.png" id="3_3f62v"]
 [ext_resource type="Texture2D" uid="uid://bw4a05xtku58s" path="res://Textures/Animations/CharacterAnimations/Idle/pixil-frame-1.png" id="4_088da"]
-[ext_resource type="Texture2D" uid="uid://b344xin0lsp0u" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-0.png" id="5_t47ah"]
-[ext_resource type="Texture2D" uid="uid://xd22uvmm26d5" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-1.png" id="6_awqhh"]
-[ext_resource type="Texture2D" uid="uid://ep0tu5ookx1q" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-2.png" id="7_1ulhj"]
-[ext_resource type="Texture2D" uid="uid://cyhijfnolslma" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-3.png" id="8_3w720"]
-[ext_resource type="Texture2D" uid="uid://ds2fe85ywa86r" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-4.png" id="9_4v7lv"]
-[ext_resource type="Texture2D" uid="uid://6xiocgmtnig3" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-5.png" id="10_ckg76"]
-[ext_resource type="Texture2D" uid="uid://cpqnn72g1i6bi" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-0.png" id="11_jtlbu"]
-[ext_resource type="Texture2D" uid="uid://del6dw24wj5nm" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-1.png" id="12_xu51a"]
-[ext_resource type="Texture2D" uid="uid://daax17u6rt5bo" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-2.png" id="13_sbqmu"]
-[ext_resource type="Texture2D" uid="uid://bnkhlsf1uqox2" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-3.png" id="14_yjlqs"]
-[ext_resource type="Texture2D" uid="uid://7kd30lgmfbt7" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-4.png" id="15_vn5ok"]
-[ext_resource type="Texture2D" uid="uid://q5hloy03v8mv" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-5.png" id="16_1lw76"]
-[ext_resource type="Texture2D" uid="uid://bubv1kfqq12wa" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-6.png" id="17_p5tkd"]
-[ext_resource type="Texture2D" uid="uid://cimwr5jretb6b" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-7.png" id="18_gu2o8"]
-[ext_resource type="Texture2D" uid="uid://bvx5jk4bbnfld" path="res://Textures/Animations/CharacterAnimations/Walk/pixil-frame-8.png" id="19_tseoj"]
+[ext_resource type="Texture2D" uid="uid://pbq32iynj58h" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-0.png" id="5_t47ah"]
+[ext_resource type="Texture2D" uid="uid://bmebd6b3p3dkn" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-1.png" id="6_awqhh"]
+[ext_resource type="Texture2D" uid="uid://dqpymmi27p82b" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-2.png" id="7_1ulhj"]
+[ext_resource type="Texture2D" uid="uid://bcv7ui41sla8" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-3.png" id="8_3w720"]
+[ext_resource type="Texture2D" uid="uid://clegbicynukjm" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-4.png" id="9_4v7lv"]
+[ext_resource type="Texture2D" uid="uid://twj8v7smj85s" path="res://Textures/Animations/CharacterAnimations/Sprint/pixil-frame-5.png" id="10_ckg76"]
+[ext_resource type="Texture2D" uid="uid://ddfybdwmcpdjg" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-0.png" id="11_jtlbu"]
+[ext_resource type="Texture2D" uid="uid://c11dgks25vxy6" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-1.png" id="12_xu51a"]
+[ext_resource type="Texture2D" uid="uid://dlpla5uacnu4m" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-2.png" id="13_sbqmu"]
+[ext_resource type="Texture2D" uid="uid://dn6vr66treoin" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-3.png" id="14_yjlqs"]
+[ext_resource type="Texture2D" uid="uid://b681qj7d7wkl8" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-4.png" id="15_vn5ok"]
+[ext_resource type="Texture2D" uid="uid://drl6l7hu8b6iu" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-5.png" id="16_1lw76"]
+[ext_resource type="Texture2D" uid="uid://q78x8pw5s7uk" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-6.png" id="17_p5tkd"]
+[ext_resource type="Texture2D" uid="uid://cb50ew7jd37p1" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-7.png" id="18_gu2o8"]
+[ext_resource type="Texture2D" uid="uid://c6y1arl0ufhje" path="res://Textures/Animations/CharacterAnimationsOld/Walk/pixil-frame-8.png" id="19_tseoj"]
 [ext_resource type="Texture2D" uid="uid://dhtybwog1fr44" path="res://Textures/Animations/CharacterAnimations/Idle/pixil-frame-2.png" id="20_w6un5"]
 [ext_resource type="Texture2D" uid="uid://dca3hsqfjmdo2" path="res://Textures/Animations/CharacterAnimations/Windy Idle/pixil-frame-3.png" id="21_ku2x1"]
 [ext_resource type="Texture2D" uid="uid://ynpei3his5vb" path="res://Textures/Animations/CharacterAnimations/Windy Idle/pixil-frame-4.png" id="22_fwckj"]
@@ -29,9 +29,9 @@
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="25_kodbi"]
 [ext_resource type="Texture2D" uid="uid://dwnrfe1wmxvy8" path="res://Textures/Animations/Wings/Flap/pixil-frame-1.png" id="25_rwit3"]
 [ext_resource type="Texture2D" uid="uid://cfbtqliq25n1y" path="res://Textures/Animations/Wings/Flap/pixil-frame-2.png" id="26_c704q"]
-[ext_resource type="Texture2D" uid="uid://jtpwgtbhrnbg" path="res://Textures/UI/pixil-frame-0.png" id="26_k6qwh"]
+[ext_resource type="Texture2D" uid="uid://jtpwgtbhrnbg" path="res://Textures/UI/UIBackground.png" id="26_k6qwh"]
 [ext_resource type="Texture2D" uid="uid://ce2nvpic7vevb" path="res://Textures/Animations/Wings/Closed/pixil-layer-Background.png" id="26_lpbi4"]
-[ext_resource type="Texture2D" uid="uid://13whpdjbbrdq" path="res://Textures/UI/pixil-frame-0 (1).png" id="26_nrh1u"]
+[ext_resource type="Texture2D" uid="uid://13whpdjbbrdq" path="res://Textures/UI/StaminaBar.png" id="26_nrh1u"]
 [ext_resource type="Texture2D" uid="uid://b3fok1y885o7t" path="res://Textures/UI/HealthBar.png" id="27_hgd6u"]
 [ext_resource type="Texture2D" uid="uid://bh8kyyiiep36c" path="res://Textures/Animations/Wings/Closed_Running/pixil-frame-0.png" id="27_m7ugl"]
 [ext_resource type="Texture2D" uid="uid://dxum7w0kbwo5t" path="res://Textures/Animations/Wings/Flap/pixil-frame-3.png" id="27_w5h3s"]
@@ -46,6 +46,12 @@
 [ext_resource type="Texture2D" uid="uid://gm5hijdg3dks" path="res://Textures/Animations/Wings/Glide/pixil-frame-1.png" id="39_1b55x"]
 [ext_resource type="Texture2D" uid="uid://g1yj8fdclafr" path="res://Textures/Animations/Wings/Glide/pixil-frame-2.png" id="40_rttwk"]
 [ext_resource type="Texture2D" uid="uid://b6nt2it6m5vy" path="res://Textures/Animations/Wings/Glide/pixil-frame-3.png" id="41_m0gea"]
+[ext_resource type="PackedScene" uid="uid://bdothoe5xrdnw" path="res://Scenes/Misc/Snow.tscn" id="42_q7yye"]
+[ext_resource type="Texture2D" uid="uid://dqyrciyes2ow0" path="res://Textures/UI/Melee.png" id="48_4qij5"]
+[ext_resource type="Texture2D" uid="uid://1yu4lk2axpmp" path="res://Textures/UI/Magic.png" id="49_txfj8"]
+[ext_resource type="Texture2D" uid="uid://biekmxreukax5" path="res://Textures/UI/Shadow.png" id="50_6njpj"]
+[ext_resource type="Texture2D" uid="uid://c6h2elpcxkctm" path="res://Textures/UI/Arrow.png" id="50_a6clv"]
+[ext_resource type="Texture2D" uid="uid://7usmcnn4ymw0" path="res://Textures/UI/InvSlot.png" id="52_4hbkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36wnl"]
 size = Vector2(11, 61)
@@ -87,7 +93,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Sprint",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -182,7 +188,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Closed_Running",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -231,6 +237,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_d3kv2"]
+radius = 56.0803
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_fcd6e")
 
@@ -244,40 +253,220 @@ shape = SubResource("RectangleShape2D_36wnl")
 position = Vector2(1, -7)
 scale = Vector2(1.026, 1)
 sprite_frames = SubResource("SpriteFrames_hmbsh")
-animation = &"Idle"
+animation = &"Walk"
 
 [node name="Wings" type="AnimatedSprite2D" parent="Character"]
 z_index = 1
 position = Vector2(21.4425, -19)
 sprite_frames = SubResource("SpriteFrames_oki7l")
-animation = &"Glide"
+animation = &"Closed_Running"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="UI" type="Sprite2D" parent="Camera2D"]
+[node name="Snow" parent="." instance=ExtResource("42_q7yye")]
+
+[node name="UI" type="Sprite2D" parent="."]
 position = Vector2(-318, -234)
 scale = Vector2(3, 3.0095)
 texture = ExtResource("26_k6qwh")
 script = ExtResource("25_kodbi")
 
-[node name="Stamina" type="TextureProgressBar" parent="Camera2D/UI"]
+[node name="Stamina" type="TextureProgressBar" parent="UI"]
 offset_left = -32.0
 offset_top = -2.0
 offset_right = 62.0
 offset_bottom = 7.0
 texture_progress = ExtResource("26_nrh1u")
 
-[node name="Health" type="TextureProgressBar" parent="Camera2D/UI"]
+[node name="Health" type="TextureProgressBar" parent="UI"]
 offset_left = -36.0
 offset_top = -11.6298
 offset_right = 70.0
 offset_bottom = -3.62984
 texture_progress = ExtResource("27_hgd6u")
 
-[node name="XP" type="TextureProgressBar" parent="Camera2D/UI"]
+[node name="XP" type="TextureProgressBar" parent="UI"]
 offset_left = -76.6667
 offset_top = -18.2755
 offset_right = -33.6667
 offset_bottom = 23.7245
 fill_mode = 2
 texture_progress = ExtResource("28_mywot")
+
+[node name="Melee" type="Sprite2D" parent="UI"]
+position = Vector2(263, 152)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("48_4qij5")
+
+[node name="Magic" type="Sprite2D" parent="UI"]
+position = Vector2(281, 170)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("49_txfj8")
+
+[node name="Shadow" type="Sprite2D" parent="UI"]
+z_index = 1
+position = Vector2(281, 170)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("50_6njpj")
+
+[node name="Arrow1" type="Sprite2D" parent="UI"]
+position = Vector2(276.664, 158.833)
+rotation = -0.715585
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("50_a6clv")
+
+[node name="Arrow2" type="Sprite2D" parent="UI"]
+position = Vector2(270, 164.479)
+rotation = 2.39983
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("50_a6clv")
+
+[node name="Inventory" type="Sprite2D" parent="UI"]
+visible = false
+
+[node name="Slot1" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(122, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot2" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(142, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot3" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(162, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot4" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(182, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot5" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(202, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot6" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(222, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot7" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(242, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot8" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(262, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot9" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(282, -8)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot10" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(122, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot11" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(142, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot12" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(162, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot13" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(182, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot14" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(202, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot15" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(222, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot16" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(242, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot17" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(262, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot18" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(282, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot19" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(122, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot20" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(142, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot21" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(162, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot22" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(182, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot23" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(202, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot24" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(222, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot25" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(242, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot26" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(262, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Slot27" type="Sprite2D" parent="UI/Inventory"]
+position = Vector2(282, 32)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("52_4hbkg")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(17, 0)
+
+[node name="PickUpRadius" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpRadius"]
+shape = SubResource("CircleShape2D_d3kv2")
+
+[connection signal="pickupfirespell" from="." to="UI" method="_on_character_body_2d_pickupfirespell"]
+[connection signal="body_entered" from="PickUpRadius" to="." method="_on_pick_up_radius_body_entered"]

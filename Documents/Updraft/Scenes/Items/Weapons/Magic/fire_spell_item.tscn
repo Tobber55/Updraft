@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmng377shfjo4"]
+
+[ext_resource type="Script" path="res://Scripts/fire_spell_item.gd" id="1_t4ypy"]
+[ext_resource type="Script" path="res://Scripts/ClickedOn.gd" id="2_q1k8q"]
+
+[sub_resource type="Curve" id="Curve_f11m3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.098901), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_67d86"]
+offsets = PackedFloat32Array(0, 0.146667, 0.493333, 0.726667, 0.866667, 1)
+colors = PackedColorArray(1, 0.109804, 0, 1, 1, 0.243137, 0.145098, 1, 1, 0.556863, 0.172549, 1, 1, 0.756863, 0, 1, 1, 0.882353, 0.513726, 0, 1, 1, 1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ucot"]
+radius = 8.0
+
+[node name="FireSpell" type="Node2D"]
+script = ExtResource("1_t4ypy")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 5000
+lifetime = 0.01
+emission_shape = 1
+emission_sphere_radius = 4.0
+gravity = Vector2(0, 0)
+radial_accel_min = -77.77
+radial_accel_max = -67.67
+damping_max = 100.0
+scale_amount_min = 0.5
+scale_amount_max = 1.75
+scale_amount_curve = SubResource("Curve_f11m3")
+color_ramp = SubResource("Gradient_67d86")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_q1k8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5ucot")
+
+[connection signal="showinfo" from="Area2D" to="." method="_on_area_2d_showinfo"]

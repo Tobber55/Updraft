@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdothoe5xrdnw"]
+
+[ext_resource type="Script" path="res://Scripts/Snow.gd" id="1_ic6cy"]
+
+[sub_resource type="Curve" id="Curve_8sa7m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.994382, 0.769231), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Snow" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-1, -365)
+amount = 400
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(1500, 1)
+gravity = Vector2(-150, 980)
+scale_amount_max = 7.0
+scale_amount_curve = SubResource("Curve_8sa7m")
+script = ExtResource("1_ic6cy")
