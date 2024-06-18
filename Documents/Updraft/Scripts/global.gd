@@ -7,6 +7,8 @@ var xp = 0
 
 var time = 0
 
+var fireballinfoshow = false
+
 # Attack
 var melee = false
 var spell = "Fireball"

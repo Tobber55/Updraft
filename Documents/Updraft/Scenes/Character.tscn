@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c4f7oy52k8v7d"]
+[gd_scene load_steps=59 format=3 uid="uid://c4f7oy52k8v7d"]
 
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_fcd6e"]
 [ext_resource type="Texture2D" uid="uid://dusdmtq5t4422" path="res://Textures/Animations/CharacterAnimations/Idle/pixil-frame-0.png" id="2_22g65"]
@@ -46,13 +46,14 @@
 [ext_resource type="Texture2D" uid="uid://gm5hijdg3dks" path="res://Textures/Animations/Wings/Glide/pixil-frame-1.png" id="39_1b55x"]
 [ext_resource type="Texture2D" uid="uid://g1yj8fdclafr" path="res://Textures/Animations/Wings/Glide/pixil-frame-2.png" id="40_rttwk"]
 [ext_resource type="Texture2D" uid="uid://b6nt2it6m5vy" path="res://Textures/Animations/Wings/Glide/pixil-frame-3.png" id="41_m0gea"]
-[ext_resource type="PackedScene" uid="uid://bdothoe5xrdnw" path="res://Scenes/Misc/Snow.tscn" id="42_q7yye"]
+[ext_resource type="PackedScene" uid="uid://bdothoe5xrdnw" path="res://Scenes/Misc/Weather.tscn" id="42_q7yye"]
 [ext_resource type="Texture2D" uid="uid://dqyrciyes2ow0" path="res://Textures/UI/Melee.png" id="48_4qij5"]
 [ext_resource type="Texture2D" uid="uid://1yu4lk2axpmp" path="res://Textures/UI/Magic.png" id="49_txfj8"]
 [ext_resource type="Texture2D" uid="uid://biekmxreukax5" path="res://Textures/UI/Shadow.png" id="50_6njpj"]
 [ext_resource type="Texture2D" uid="uid://c6h2elpcxkctm" path="res://Textures/UI/Arrow.png" id="50_a6clv"]
 [ext_resource type="Texture2D" uid="uid://7usmcnn4ymw0" path="res://Textures/UI/InvSlot.png" id="52_4hbkg"]
 [ext_resource type="Texture2D" uid="uid://bb5ct1of1pt0x" path="res://Textures/UI/Info.png" id="53_6qug8"]
+[ext_resource type="Texture2D" uid="uid://cwvxge5w55q6q" path="res://Textures/UI/ItemDescription.png" id="54_dmh88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36wnl"]
 size = Vector2(11, 61)
@@ -461,26 +462,46 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("52_4hbkg")
 
 [node name="ItemInfo" type="Sprite2D" parent="UI"]
-position = Vector2(-49.6669, 60.4752)
-scale = Vector2(0.3, 0.3)
+visible = false
+position = Vector2(-49.6669, 60.6413)
+scale = Vector2(0.3, 0.232597)
 texture = ExtResource("53_6qug8")
 
-[node name="Label" type="Label" parent="UI/ItemInfo"]
-offset_left = -98.0
-offset_top = -23.0
-offset_right = 98.0
-offset_bottom = 23.0
-theme_type_variation = &"HeaderMedium"
+[node name="ItemInfoBig" type="Sprite2D" parent="UI/ItemInfo"]
+position = Vector2(0.000854492, 91.4286)
+scale = Vector2(1, 0.635714)
+texture = ExtResource("54_dmh88")
+
+[node name="Title" type="Label" parent="UI"]
+visible = false
+offset_left = -80.0
+offset_top = 55.0
+offset_right = 523.0
+offset_bottom = 172.0
+scale = Vector2(0.1, 0.1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/shadow_outline_size = 0
-theme_override_font_sizes/font_size = 24
-text = "Fireball"
+theme_override_font_sizes/font_size = 72
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_ratio = -0.125
+
+[node name="Description" type="Label" parent="UI"]
+visible = false
+offset_left = -80.0
+offset_top = 67.0
+offset_right = 523.0
+offset_bottom = 364.0
+scale = Vector2(0.1, 0.1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(17, 0)

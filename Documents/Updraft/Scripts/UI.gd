@@ -11,6 +11,8 @@ const firespellitem = preload("res://Scenes/Items/Weapons/Magic/fire_spell_item.
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	
 	pass # Replace with function body.
 
 
@@ -57,118 +59,161 @@ func _physics_process(delta):
 	
 	pass
 	
+	
+	_iteminfo()
+	
 func _pickup(x):
 	if Global.inventory[0] == 1:
 		x.position.x = 122
 		x.position.y = -8
+		x.invslot = 1
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 2:
 		x.position.x = 142
 		x.position.y = -8
+		x.invslot = 2
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 3:
 		x.position.x = 162
 		x.position.y = -8
+		x.invslot = 3
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 4:
 		x.position.x = 182
 		x.position.y = -8
+		x.invslot = 4
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 5:
 		x.position.x = 202
 		x.position.y = -8
+		x.invslot = 5
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 6:
 		x.position.x = 222
 		x.position.y = -8
+		x.invslot = 6
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 7:
 		x.position.x = 242
 		x.position.y = -8
+		x.invslot = 7
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 8:
 		x.position.x = 262
 		x.position.y = -8
+		x.invslot = 8
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 9:
 		x.position.x = 282
 		x.position.y = -8
+		x.invslot = 9
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 10:
 		x.position.x = 122
 		x.position.y = 12
+		x.invslot = 10
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 11:
 		x.position.x = 142
 		x.position.y = 12
+		x.invslot = 11
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 12:
 		x.position.x = 162
 		x.position.y = 12
+		x.invslot = 12
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 13:
 		x.position.x = 182
 		x.position.y = 12
+		x.invslot = 13
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 14:
 		x.position.x = 202
 		x.position.y = 12
+		x.invslot = 14
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 15:
 		x.position.x = 222
 		x.position.y = 12
+		x.invslot = 15
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 16:
 		x.position.x = 242
 		x.position.y = 12
+		x.invslot = 16
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 17:
 		x.position.x = 262
 		x.position.y = 12
+		x.invslot = 17
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 18:
 		x.position.x = 282
 		x.position.y = 12
+		x.invslot = 18
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 19:
 		x.position.x = 122
 		x.position.y = 32
+		x.invslot = 19
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 20:
 		x.position.x = 142
 		x.position.y = 32
+		x.invslot = 20
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 21:
 		x.position.x = 162
 		x.position.y = 32
+		x.invslot = 21
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 22:
 		x.position.x = 182
 		x.position.y = 32
+		x.invslot = 22
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 23:
 		x.position.x = 202
 		x.position.y = 32
+		x.invslot = 23
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 24:
 		x.position.x = 222
 		x.position.y = 32
+		x.invslot = 24
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 25:
 		x.position.x = 242
 		x.position.y = 32
+		x.invslot = 25
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 26:
 		x.position.x = 262
 		x.position.y = 32
+		x.invslot = 26
 		Global.inventory.pop_at(0)
 	elif Global.inventory[0] == 27:
 		x.position.x = 282
 		x.position.y = 32
+		x.invslot = 27
 		Global.inventory.pop_at(0)
 		
 
-
+func _iteminfo():
+	if Global.fireballinfoshow == true and inventoryopen == true:
+		$ItemInfo.show()
+		$Title.show()
+		$Description.show()
+		$Title.text = "Fireball"
+		$Description.text = "6 Damage\nBurning Effect\nFire Typing\nSellable"
+	else:
+		$ItemInfo.hide()
+		$Title.hide()
+		$Description.hide()
+		$Title.text = ""
+		$Description.text = ""
+		Global.fireballinfoshow = false
 
 
 func _on_character_body_2d_pickupfirespell():

@@ -13,4 +13,5 @@ func _process(delta):
 	
 func _input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click"):
-		showinfo.emit()
+		#Use An Item
+		pass
