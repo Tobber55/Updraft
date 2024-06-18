@@ -32,5 +32,3 @@ shape = SubResource("RectangleShape2D_wv0rc")
 
 [node name="FireSpell" parent="." instance=ExtResource("5_kyugf")]
 position = Vector2(263, -179)
-
-[connection signal="pickup" from="FireSpell" to="Charecter" method="_on_fire_spell_pickup"]

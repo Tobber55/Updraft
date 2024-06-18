@@ -194,6 +194,8 @@ func _on_fire_spell_pickup():
 func _on_pick_up_radius_body_entered(body):
 	
 	if body.is_in_group("Item") and len(Global.inventory) != 0:
-		
+		body.queue_free()
+		if body.is_in_group("FireSpell"):
+			pickupfirespell.emit()
 	
 	pass # Replace with function body.

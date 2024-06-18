@@ -10,6 +10,7 @@ point_count = 2
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(-1, -365)
+emitting = false
 amount = 400
 lifetime = 2.0
 emission_shape = 3

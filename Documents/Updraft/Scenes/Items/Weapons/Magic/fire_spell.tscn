@@ -13,7 +13,7 @@ colors = PackedColorArray(1, 0.109804, 0, 1, 1, 0.243137, 0.145098, 1, 1, 0.5568
 [sub_resource type="CircleShape2D" id="CircleShape2D_usnea"]
 radius = 9.0
 
-[node name="FireSpell" type="CharacterBody2D"]
+[node name="FireSpell" type="CharacterBody2D" groups=["FireSpell", "Item"]]
 script = ExtResource("1_3l1tg")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -31,11 +31,3 @@ color_ramp = SubResource("Gradient_67d86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_usnea")
-
-[node name="Area2D" type="Area2D" parent="." groups=["Item"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(4, 4)
-shape = SubResource("CircleShape2D_usnea")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
