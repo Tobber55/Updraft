@@ -13,6 +13,7 @@ colors = PackedColorArray(1, 0.109804, 0, 1, 1, 0.243137, 0.145098, 1, 1, 0.5568
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40v0o"]
 
 [node name="FireSpellItem" type="Node2D"]
+z_index = 1
 script = ExtResource("1_t4ypy")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -35,5 +36,7 @@ color_ramp = SubResource("Gradient_67d86")
 scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_40v0o")
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

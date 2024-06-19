@@ -57,147 +57,46 @@ func _physics_process(delta):
 		$Melee.scale.x = 0.25
 		$Melee.scale.y = 0.25
 	
+	if Global.spell != "":
+		$Magic/Sprite2D.texture = preload("res://Textures/UI/Blank.png")
+	else:
+		$Magic/Sprite2D.texture = preload("res://Textures/UI/Magic.png")
+		
+	if Global.meleeattack != "":
+		$Melee/Sprite2D.texture = preload("res://Textures/UI/Blank.png")
+	else:
+		$Melee/Sprite2D.texture = preload("res://Textures/UI/Melee.png")
+	
 	pass
 	
 	
 	_iteminfo()
 	
 func _pickup(x):
-	if Global.inventory[0] == 1:
-		x.position.x = 122
-		x.position.y = -8
-		x.invslot = 1
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 2:
-		x.position.x = 142
-		x.position.y = -8
-		x.invslot = 2
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 3:
-		x.position.x = 162
-		x.position.y = -8
-		x.invslot = 3
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 4:
-		x.position.x = 182
-		x.position.y = -8
-		x.invslot = 4
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 5:
-		x.position.x = 202
-		x.position.y = -8
-		x.invslot = 5
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 6:
-		x.position.x = 222
-		x.position.y = -8
-		x.invslot = 6
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 7:
-		x.position.x = 242
-		x.position.y = -8
-		x.invslot = 7
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 8:
-		x.position.x = 262
-		x.position.y = -8
-		x.invslot = 8
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 9:
-		x.position.x = 282
-		x.position.y = -8
-		x.invslot = 9
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 10:
-		x.position.x = 122
-		x.position.y = 12
-		x.invslot = 10
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 11:
-		x.position.x = 142
-		x.position.y = 12
-		x.invslot = 11
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 12:
-		x.position.x = 162
-		x.position.y = 12
-		x.invslot = 12
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 13:
-		x.position.x = 182
-		x.position.y = 12
-		x.invslot = 13
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 14:
-		x.position.x = 202
-		x.position.y = 12
-		x.invslot = 14
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 15:
-		x.position.x = 222
-		x.position.y = 12
-		x.invslot = 15
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 16:
-		x.position.x = 242
-		x.position.y = 12
-		x.invslot = 16
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 17:
-		x.position.x = 262
-		x.position.y = 12
-		x.invslot = 17
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 18:
-		x.position.x = 282
-		x.position.y = 12
-		x.invslot = 18
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 19:
-		x.position.x = 122
-		x.position.y = 32
-		x.invslot = 19
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 20:
-		x.position.x = 142
-		x.position.y = 32
-		x.invslot = 20
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 21:
-		x.position.x = 162
-		x.position.y = 32
-		x.invslot = 21
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 22:
-		x.position.x = 182
-		x.position.y = 32
-		x.invslot = 22
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 23:
-		x.position.x = 202
-		x.position.y = 32
-		x.invslot = 23
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 24:
-		x.position.x = 222
-		x.position.y = 32
-		x.invslot = 24
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 25:
-		x.position.x = 242
-		x.position.y = 32
-		x.invslot = 25
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 26:
-		x.position.x = 262
-		x.position.y = 32
-		x.invslot = 26
-		Global.inventory.pop_at(0)
-	elif Global.inventory[0] == 27:
-		x.position.x = 282
-		x.position.y = 32
-		x.invslot = 27
-		Global.inventory.pop_at(0)
+	
+	for i in 27:
+		if i <= 9 and Global.inventory[0] == i:
+			x.position.x = 122 + (20 * (i - 1))
+			print(122 + (20 * (i - 1)))
+			x.position.y = -8
+			x.invslot = i
+			Global.inventory.pop_at(i - 1)
+			break
+		elif i <= 18 and Global.inventory[0] == i:
+			x.position.x = 122 + (20 * (i - 10))
+			x.position.y = 12
+			x.invslot = i
+			Global.inventory.pop_at(i - 1)
+			break
+		elif i <= 27 and Global.inventory[0] == i:
+			x.position.x = 122 + (20 * (i - 19))
+			x.position.y = 32
+			x.invslot = i
+			Global.inventory.pop_at(i - 1)
+			break
+		
+	
+	
 		
 
 func _iteminfo():

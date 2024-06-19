@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://c4f7oy52k8v7d"]
+[gd_scene load_steps=62 format=3 uid="uid://c4f7oy52k8v7d"]
 
 [ext_resource type="Script" path="res://Scripts/Character.gd" id="1_fcd6e"]
 [ext_resource type="Texture2D" uid="uid://dusdmtq5t4422" path="res://Textures/Animations/CharacterAnimations/Idle/pixil-frame-0.png" id="2_22g65"]
@@ -239,6 +239,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rcwa"]
+size = Vector2(50.4762, 50.3169)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31atm"]
+size = Vector2(50.6667, 50.5067)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1alu"]
+size = Vector2(51.1111, 50.9498)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_d3kv2"]
 radius = 44.0
 
@@ -295,15 +304,29 @@ offset_bottom = 23.7245
 fill_mode = 2
 texture_progress = ExtResource("28_mywot")
 
-[node name="Melee" type="Sprite2D" parent="UI"]
+[node name="Melee" type="StaticBody2D" parent="UI" groups=["MeleeSlot"]]
 position = Vector2(263, 152)
 scale = Vector2(0.35, 0.35)
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Melee"]
 texture = ExtResource("48_4qij5")
 
-[node name="Magic" type="Sprite2D" parent="UI"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Melee"]
+position = Vector2(-0.476196, 0.0531616)
+shape = SubResource("RectangleShape2D_0rcwa")
+one_way_collision = true
+
+[node name="Magic" type="StaticBody2D" parent="UI" groups=["SpellSlot"]]
 position = Vector2(281, 170)
 scale = Vector2(0.25, 0.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Magic"]
 texture = ExtResource("49_txfj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Magic"]
+position = Vector2(0, 0.511719)
+shape = SubResource("RectangleShape2D_31atm")
+one_way_collision = true
 
 [node name="Shadow" type="Sprite2D" parent="UI"]
 z_index = 1
@@ -324,141 +347,329 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("50_a6clv")
 
 [node name="Inventory" type="Sprite2D" parent="UI"]
-visible = false
 
-[node name="Slot1" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot1" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(122, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot1"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot1"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot2" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot2" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(142, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot2"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot2"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot3" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot3" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(162, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot3"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot3"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot4" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot4" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(182, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot4"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot4"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot5" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot5" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(202, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot5"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot5"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot6" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot6" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(222, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot6"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot6"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot7" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot7" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(242, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot7"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot7"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot8" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot8" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(262, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot8"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot8"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot9" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot9" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(282, -8)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot9"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot9"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot10" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot10" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(122, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot10"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot10"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot11" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot11" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(142, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot11"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot11"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot12" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot12" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(162, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot12"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot12"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot13" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot13" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(182, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot13"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot13"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot14" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot14" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(202, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot14"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot14"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot15" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot15" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(222, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot15"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot15"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot16" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot16" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(242, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot16"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot16"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot17" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot17" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(262, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot17"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot17"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot18" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot18" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(282, 12)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot18"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot18"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot19" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot19" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(122, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot19"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot19"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot20" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot20" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(142, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot20"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot20"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot21" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot21" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(162, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot21"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot21"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot22" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot22" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(182, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot22"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot22"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot23" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot23" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(202, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot23"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot23"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot24" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot24" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(222, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot24"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot24"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot25" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot25" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(242, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot25"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot25"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot26" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot26" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(262, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot26"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot26"]
 texture = ExtResource("52_4hbkg")
 
-[node name="Slot27" type="Sprite2D" parent="UI/Inventory"]
+[node name="Slot27" type="StaticBody2D" parent="UI/Inventory" groups=["InvSlot"]]
 position = Vector2(282, 32)
 scale = Vector2(0.3, 0.3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/Inventory/Slot27"]
+position = Vector2(1.52588e-05, 0.0841675)
+shape = SubResource("RectangleShape2D_b1alu")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Inventory/Slot27"]
 texture = ExtResource("52_4hbkg")
 
 [node name="ItemInfo" type="Sprite2D" parent="UI"]

@@ -171,7 +171,7 @@ func _physics_process(delta):
 	if cooldown > 0:
 		cooldown -= 1
 	
-	if Input.is_action_just_pressed("click") and Global.melee == true and cooldown <= 0:
+	if Input.is_action_just_pressed("click") and Global.melee == true and cooldown <= 0 and Global.cantattack == false:
 		magic()
 		cooldown += 20
 	
