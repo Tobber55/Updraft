@@ -153,7 +153,7 @@ func magic():
 	if Global.spell == "Fireball": #AND FIRE SPELL
 		var shoot = fireball.instantiate()
 		get_parent().add_child(shoot)
-		
+		shoot.z_index = 0
 		shoot.position = $Marker2D.global_position
 		
 		print(shoot)

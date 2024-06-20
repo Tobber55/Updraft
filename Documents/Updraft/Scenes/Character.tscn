@@ -277,6 +277,7 @@ animation = &"Closed_Running"
 [node name="Snow" parent="." instance=ExtResource("42_q7yye")]
 
 [node name="UI" type="Sprite2D" parent="."]
+z_index = 10
 position = Vector2(-318, -234)
 scale = Vector2(3, 3.0095)
 texture = ExtResource("26_k6qwh")
