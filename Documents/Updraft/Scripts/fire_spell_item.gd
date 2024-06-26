@@ -6,6 +6,7 @@ var invslot
 
 var draggable = false
 var snap = true
+var dragging = false
 
 var equipped = false
 var equippable = false
@@ -14,6 +15,11 @@ var equippable = false
 var nearest_invslot
 
 var oldpos = Vector2(0, 0)
+
+const item = preload("res://Scenes/Items/Weapons/Magic/fire_spell.tscn")
+
+
+var count = 0 ############put in func
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,10 +37,16 @@ func _process(delta):
 	else:
 		self.show()
 	
-	if draggable == true and Input.is_action_pressed("click") and not (equipped == true and Global.melee == false) and get_parent().inventoryopen == true:
+	if draggable == true and Input.is_action_just_pressed("click") and not (equipped == true and Global.melee == false) and get_parent().inventoryopen == true:
+		dragging = true
+	
+	if dragging == true:
 		global_position = get_global_mouse_position()
-		equipped = false
-		Global.spell = ""
+		if equipped == true:
+			equipped = false
+			Global.spell = ""   ################ BUG HERE
+		if Input.is_action_just_released("click"):
+			dragging = false
 	
 	
 	
@@ -44,7 +56,12 @@ func _process(delta):
 		invslot = 0
 		
 	
-	#print(get_parent().get_parent().get_local_mouse_position())
+	if draggable == true and Input.is_action_pressed("ui_drop") and Input.is_action_just_pressed("click"):
+		var drop = item.instantiate()
+		get_parent().get_parent().get_parent().add_child(drop)
+		drop.position = get_parent().get_parent().get_child(5).global_position
+		print(11)
+	
 	if Input.is_action_just_released("click") and snap == false and equippable == false:
 		get_parent()._pickup(self)
 	
@@ -81,7 +98,6 @@ func _process(delta):
 	#		if i.global_position.distance_to(self.global_position) < nearest_invslot.global_position.distance_to(self.global_position):
 	#			nearest_invslot = i
 	
-	print(invslot)
 	
 	pass
 
@@ -109,7 +125,7 @@ func _on_area_2d_mouse_exited():
 
 func _on_area_2d_body_entered(body):
 	
-	if body.is_in_group("SpellSlot"):
+	if body.is_in_group("SpellSlot") and Global.melee == true:
 		equippable = true
 		self.scale.x = 0.8
 		self.scale.y = 0.8
@@ -127,22 +143,52 @@ func _on_area_2d_body_exited(body):
 	
 	pass # Replace with function body.
 	
+	
+func is_in(x):
+	for i in Global.inventory:
+		if x == i:
+			return(true)
+	return(false)
+	
 func is_any_invslot_inside() -> bool:
 	var overlapping_bodies = $Area2D.get_overlapping_bodies()
 	for body in overlapping_bodies:
 		if body.is_in_group("InvSlot"):
 			if invslot == 0 and not Input.is_action_pressed("click"):
 				self.position = body.position
-				
 				if self.position.y == -8:
-					Global.inventory.pop_at((self.position.x - 122) / 20)
-					invslot = ((self.position.x - 122) / 20) + 1
+					for i in ((self.position.x - 122) / 20):
+						if not is_in(i + 1):
+							count += 1
+					if Global.inventory[((self.position.x - 122) / 20) - count] == ((self.position.x - 122) / 20) + 1:
+						Global.inventory.pop_at(((self.position.x - 122) / 20) - count)
+						invslot = ((self.position.x - 122) / 20) + 1
+						count = 0
+					else:
+						get_parent()._pickup(self)
+						count = 0
 				elif self.position.y == 12:
-					Global.inventory.pop_at(((self.position.x - 122) / 20) + 9)
-					invslot = ((self.position.x - 122) / 20) + 10
+					for i in ((self.position.x - 122) / 20) + 9:
+						if not is_in(i + 1):
+							count += 1
+					if Global.inventory[((self.position.x - 122) / 20) + 9 - count] == ((self.position.x - 122) / 20) + 10:
+						Global.inventory.pop_at(((self.position.x - 122) / 20) + 9 - count)
+						invslot = ((self.position.x - 122) / 20) + 10
+						count = 0
+					else:
+						get_parent()._pickup(self)
+						count = 0
 				elif self.position.y == 32:
-					Global.inventory.pop_at(((self.position.x - 122) / 20) + 18)
-					invslot = ((self.position.x - 122) / 20) + 19
+					for i in ((self.position.x - 122) / 20) + 18:
+						if not is_in(i + 1):
+							count += 1
+					if Global.inventory[((self.position.x - 122) / 20) + 18 - count] == ((self.position.x - 122) / 20) + 19:
+						Global.inventory.pop_at(((self.position.x - 122) / 20) + 18 - count)
+						invslot = ((self.position.x - 122) / 20) + 19
+						count = 0
+					else:
+						get_parent()._pickup(self)
+						count = 0
 					
 			return true
 	return false

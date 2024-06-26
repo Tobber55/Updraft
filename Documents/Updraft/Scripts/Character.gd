@@ -180,6 +180,7 @@ func _physics_process(delta):
 	
 	#print($Character/Wings.position)
 	
+	#print(Global.inventory)
 	
 	pass
 
