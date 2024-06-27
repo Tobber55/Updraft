@@ -11,6 +11,7 @@ var dragging = false
 var equipped = false
 var equippable = false
 
+
 #var invslots = get_tree().get_nodes_in_group("InvSlot")
 var nearest_invslot
 
@@ -59,7 +60,15 @@ func _process(delta):
 	if draggable == true and Input.is_action_pressed("ui_drop") and Input.is_action_just_pressed("click"):
 		var drop = item.instantiate()
 		get_parent().get_parent().get_parent().add_child(drop)
-		drop.position = get_parent().get_parent().get_child(5).global_position
+		if get_parent().get_parent().get_child(5).position.x < 0:
+			drop.position.x = get_parent().get_parent().get_child(5).global_position.x - 35
+		else:
+			drop.position.x = get_parent().get_parent().get_child(5).global_position.x + 35
+		drop.position.y = get_parent().get_parent().get_child(5).global_position.y
+		drop.cantbepickedup = 25
+		self.queue_free()
+		#drop.$CollisionShape2D.
+		
 		print(11)
 	
 	if Input.is_action_just_released("click") and snap == false and equippable == false:

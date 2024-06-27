@@ -31,3 +31,4 @@ color_ramp = SubResource("Gradient_67d86")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_usnea")
+one_way_collision_margin = 0.0

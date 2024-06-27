@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jtpwgtbhrnbg"
-path="res://.godot/imported/UIBackground.png-d7593509f15ee1490d734c981c95ee5a.ctex"
+path="res://.godot/imported/UIBlack.png-23ccf034959b98da113f450c0c7d9731.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/UI/UIBackground.png"
-dest_files=["res://.godot/imported/UIBackground.png-d7593509f15ee1490d734c981c95ee5a.ctex"]
+source_file="res://Textures/UI/UIBlack.png"
+dest_files=["res://.godot/imported/UIBlack.png-23ccf034959b98da113f450c0c7d9731.ctex"]
 
 [params]
 

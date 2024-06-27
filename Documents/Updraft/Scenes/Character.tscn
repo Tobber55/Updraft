@@ -29,7 +29,6 @@
 [ext_resource type="Script" path="res://Scripts/UI.gd" id="25_kodbi"]
 [ext_resource type="Texture2D" uid="uid://dwnrfe1wmxvy8" path="res://Textures/Animations/Wings/Flap/pixil-frame-1.png" id="25_rwit3"]
 [ext_resource type="Texture2D" uid="uid://cfbtqliq25n1y" path="res://Textures/Animations/Wings/Flap/pixil-frame-2.png" id="26_c704q"]
-[ext_resource type="Texture2D" uid="uid://jtpwgtbhrnbg" path="res://Textures/UI/UIBackground.png" id="26_k6qwh"]
 [ext_resource type="Texture2D" uid="uid://ce2nvpic7vevb" path="res://Textures/Animations/Wings/Closed/pixil-layer-Background.png" id="26_lpbi4"]
 [ext_resource type="Texture2D" uid="uid://13whpdjbbrdq" path="res://Textures/UI/StaminaBar.png" id="26_nrh1u"]
 [ext_resource type="Texture2D" uid="uid://b3fok1y885o7t" path="res://Textures/UI/HealthBar.png" id="27_hgd6u"]
@@ -47,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://g1yj8fdclafr" path="res://Textures/Animations/Wings/Glide/pixil-frame-2.png" id="40_rttwk"]
 [ext_resource type="Texture2D" uid="uid://b6nt2it6m5vy" path="res://Textures/Animations/Wings/Glide/pixil-frame-3.png" id="41_m0gea"]
 [ext_resource type="PackedScene" uid="uid://bdothoe5xrdnw" path="res://Scenes/Misc/Weather.tscn" id="42_q7yye"]
+[ext_resource type="Texture2D" uid="uid://c214c775s04hm" path="res://Textures/UI/UIWhite.png" id="43_o2pgi"]
 [ext_resource type="Texture2D" uid="uid://dqyrciyes2ow0" path="res://Textures/UI/Melee.png" id="48_4qij5"]
 [ext_resource type="Texture2D" uid="uid://1yu4lk2axpmp" path="res://Textures/UI/Magic.png" id="49_txfj8"]
 [ext_resource type="Texture2D" uid="uid://biekmxreukax5" path="res://Textures/UI/Shadow.png" id="50_6njpj"]
@@ -249,7 +249,7 @@ size = Vector2(50.6667, 50.5067)
 size = Vector2(51.1111, 50.9498)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d3kv2"]
-radius = 44.0
+radius = 45.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_fcd6e")
@@ -280,7 +280,7 @@ animation = &"Closed_Running"
 z_index = 10
 position = Vector2(-318, -234)
 scale = Vector2(3, 3.0095)
-texture = ExtResource("26_k6qwh")
+texture = ExtResource("43_o2pgi")
 script = ExtResource("25_kodbi")
 
 [node name="Stamina" type="TextureProgressBar" parent="UI"]

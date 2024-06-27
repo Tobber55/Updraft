@@ -78,7 +78,6 @@ func _pickup(x):
 		for i in Global.inventory:
 			if i <= 9 and Global.inventory[0] == i:
 				x.position.x = 122 + (20 * (i - 1))
-				print(122 + (20 * (i - 1)))
 				x.position.y = -8
 				x.invslot = i
 				Global.inventory.pop_at(0)
